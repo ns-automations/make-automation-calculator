@@ -47,7 +47,7 @@ export const FreeMigrationModal: React.FC<FreeMigrationModalProps> = ({
       submittedAt: new Date().toISOString()
     };
     try {
-      const response = await fetch('https://hook.us2.make.com/YOUR_WEBHOOK_ID', {
+      const response = await fetch('https://hook.us2.make.com/2pvprc3s411o5lli1eexfocgcdsg463m', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

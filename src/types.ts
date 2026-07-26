@@ -4,7 +4,7 @@ export interface ZapierPlanOption {
   id: ZapierPlanId;
   label: string;
   defaultTasks: number;
-  monthlyPrice: number;
+  monthlyPrice: number; // annual billing rate per month
   description?: string;
 }
 
@@ -13,7 +13,7 @@ export type MakeTier = 'Core' | 'Pro' | 'Teams';
 export interface MakePlanOption {
   tier: MakeTier;
   name: string;
-  basePrice: number;
+  basePrice: number; // annual billing rate per month
   baseCredits: number;
   description: string;
   features: string[];

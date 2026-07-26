@@ -38,6 +38,7 @@ export const CalculatorInputs: React.FC<CalculatorInputsProps> = ({
         </span>
       </div>
 
+      {/* Input 1: Current Zapier plan (dropdown) */}
       <div className="space-y-2">
         <label htmlFor="zapier-plan-select" className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">
           Input 01: Current Zapier Plan Tier
@@ -61,6 +62,7 @@ export const CalculatorInputs: React.FC<CalculatorInputsProps> = ({
         </div>
       </div>
 
+      {/* Input 2: Monthly task volume */}
       <div className="space-y-2 pt-1">
         <div className="flex items-center justify-between">
           <label htmlFor="monthly-tasks-input" className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">
@@ -68,6 +70,7 @@ export const CalculatorInputs: React.FC<CalculatorInputsProps> = ({
           </label>
           <span className="text-[10px] font-bold uppercase tracking-wider text-violet-600">Editable</span>
         </div>
+
         <div className="relative">
           <input
             id="monthly-tasks-input"
@@ -86,10 +89,14 @@ export const CalculatorInputs: React.FC<CalculatorInputsProps> = ({
             tasks / mo
           </div>
         </div>
+
+        {/* Dashboards Billing Help Subtitle */}
         <p className="text-xs text-slate-400 leading-relaxed italic flex items-center gap-1.5 pt-1">
           <HelpCircle className="w-3.5 h-3.5 text-slate-400 shrink-0 not-italic" />
           <span>Check your Zapier dashboard under <strong className="font-semibold text-slate-600 not-italic">Settings → Billing</strong> for exact usage.</span>
         </p>
+
+        {/* Quick presets */}
         <div className="pt-3">
           <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
             Preset Task Volumes:
@@ -116,6 +123,7 @@ export const CalculatorInputs: React.FC<CalculatorInputsProps> = ({
         </div>
       </div>
 
+      {/* Input 2b: Custom Zapier Price override */}
       {isHigherTierSelected && (
         <div className="pt-4 border-t border-slate-200/80 space-y-2 animate-fadeIn">
           <div className="flex items-center justify-between">
@@ -144,3 +152,4 @@ export const CalculatorInputs: React.FC<CalculatorInputsProps> = ({
     </div>
   );
 };
+

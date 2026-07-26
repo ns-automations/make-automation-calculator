@@ -61,11 +61,15 @@ export const FAQSection: React.FC = () => {
           Key information about migration methodology, API unit conversion, and zero-downtime cutover.
         </p>
       </div>
+
       <div className="space-y-2 pt-2">
         {FAQS.map((faq, idx) => {
           const isOpen = openIdx === idx;
           return (
-            <div key={idx} className="border border-slate-200 rounded-lg overflow-hidden transition">
+            <div
+              key={idx}
+              className="border border-slate-200 rounded-lg overflow-hidden transition"
+            >
               <button
                 onClick={() => setOpenIdx(isOpen ? null : idx)}
                 className="w-full text-left p-4 flex items-center justify-between font-bold text-xs sm:text-sm text-slate-800 bg-slate-50/70 hover:bg-slate-100 transition"
@@ -85,3 +89,4 @@ export const FAQSection: React.FC = () => {
     </div>
   );
 };
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CalculationResult, MakeTier } from '../types';
-import { TrendingDown } from 'lucide-react';
+import { ShieldCheck, TrendingDown } from 'lucide-react';
 import { MAKE_PLANS } from '../data/pricingData';
 
 interface SavingsResultsProps {
@@ -29,6 +29,7 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
 
   return (
     <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 space-y-6 shadow-xs relative overflow-hidden">
+      {/* Header & Tag */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200">
         <div>
           <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">
@@ -38,6 +39,8 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
             Switch & Save Breakdown
           </h2>
         </div>
+
+        {/* Savings Badge */}
         {isPositiveSavings && (
           <div className="flex items-center gap-1.5 bg-violet-100 text-violet-700 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider self-start sm:self-auto border border-violet-200">
             <TrendingDown className="w-4 h-4 text-violet-600" />
@@ -46,6 +49,7 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
         )}
       </div>
 
+      {/* Make Tier Selector */}
       <div className="space-y-2">
         <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">
           Select Make.com Tier:
@@ -72,7 +76,9 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
         </div>
       </div>
 
+      {/* Numerical Comparison Rows */}
       <div className="space-y-4 pt-1">
+        {/* Current Zapier Cost */}
         <div className="flex items-center justify-between py-2 border-b border-slate-100">
           <div>
             <span className="text-slate-600 font-medium text-sm">Current Zapier Cost</span>
@@ -85,6 +91,8 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
             <small className="text-xs text-slate-400 font-sans font-normal ml-1">/mo</small>
           </div>
         </div>
+
+        {/* Estimated Make.com Cost */}
         <div className="flex items-center justify-between py-2 border-b border-slate-100">
           <div>
             <span className="text-slate-600 font-medium text-sm">Estimated Make.com Cost</span>
@@ -100,6 +108,7 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
         </div>
       </div>
 
+      {/* Main Net Savings Callout Card */}
       <div className="bg-violet-600 rounded-xl p-6 sm:p-8 text-white shadow-xl shadow-violet-200">
         <p className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80 mb-2">
           Estimated Net Savings
@@ -118,6 +127,7 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
         This is an estimate based on typical migration patterns. Actual savings depend on your specific workflow complexity.
       </p>
 
+      {/* Bar Comparison Visual */}
       <div className="space-y-2 pt-1">
         <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
           <span>Expense Comparison</span>
@@ -125,6 +135,7 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
             Save ${monthlySavings.toFixed(2)} / month
           </span>
         </div>
+
         <div className="space-y-2">
           <div>
             <div className="flex justify-between text-[11px] text-slate-400 mb-1 font-mono">
@@ -138,6 +149,7 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
               />
             </div>
           </div>
+
           <div>
             <div className="flex justify-between text-[11px] text-slate-400 mb-1 font-mono">
               <span>Make.com</span>
@@ -153,6 +165,7 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
         </div>
       </div>
 
+      {/* Assumption Note */}
       <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
         <p className="text-[10px] text-slate-500 leading-normal">
           <span className="font-bold text-slate-700">Assumption:</span> Make.com operations are modeled at a <strong>1:1.2 task-to-credit ratio</strong> (20% safety buffer) to ensure conservative, defensible savings estimates.
@@ -161,3 +174,4 @@ export const SavingsResults: React.FC<SavingsResultsProps> = ({
     </div>
   );
 };
+
